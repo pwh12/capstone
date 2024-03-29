@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
     <TextView
-        android:id="@+id/home_title"
+        android:id="@+id/recent_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -46,8 +46,8 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/home_title"
-        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+        app:layout_constraintStart_toStartOf="@+id/recent_title"
+        app:layout_constraintTop_toBottomOf="@+id/recent_title" />
 
     <LinearLayout
         android:id="@+id/filter_ll"

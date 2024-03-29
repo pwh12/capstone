@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var tab1: HomeFragment
     private lateinit var tab2: HomeFragment
-    private lateinit var tab3: HomeFragment
+    private lateinit var tab3: MenuFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,16 +21,17 @@ class MainActivity : AppCompatActivity() {
 
         tab1 = HomeFragment()
         tab2 = HomeFragment()
-        tab3 = HomeFragment()
+        tab3 = MenuFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.frameLayout, tab1).commit()
 
-        binding.bottomNavigationView.setOnClickListener {
-                item -> when(item.id){
+        binding.bottomNavigationView.setOnItemSelectedListener {
+                item -> when(item.itemId){
             R.id.home -> replaceFragment(tab1)
-            R.id.like -> replaceFragment(tab1)
-            R.id.myPage -> replaceFragment(tab1)
+            R.id.like -> replaceFragment(tab2)
+            R.id.myPage -> replaceFragment(tab3)
         }
+            true
         }
     }
 

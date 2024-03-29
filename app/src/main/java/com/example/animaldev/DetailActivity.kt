@@ -121,6 +121,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         databaseHelper = DatabaseHelper(this)
         val animalId = intent.getStringExtra("noticeNo") ?: return
 
+        databaseHelper.addDetailVisited(animalId)
+
         // 현재 동물의 좋아요 상태를 조회하여 UI 업데이트
         val isLiked = databaseHelper.isLiked(animalId)
         binding.detailHeart.setImageResource(if (isLiked) R.drawable.full_heart else R.drawable.heart)
@@ -209,4 +211,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         googleMap?.addMarker(MarkerOptions().position(location).title("보호소 위치"))
         googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
     }
+
 }
+
+

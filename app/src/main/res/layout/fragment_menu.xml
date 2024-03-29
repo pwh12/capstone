@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="메뉴"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/menu_text"
+        android:layout_width="376dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/choose_filter"
+        android:drawableLeft="@drawable/megaphone"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="유기동물 입양이 처음이신가요?"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+
+        <android.widget.Button
+            android:id="@+id/menu_btn0"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/foot"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="20dp"
+            android:gravity="fill"
+            android:stateListAnimator="@null"
+            android:text="최근 본 동물"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:textSize="17sp" />
+
+        <android.widget.Button
+            android:id="@+id/menu_btn1"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/cap"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="20dp"
+            android:gravity="fill"
+            android:stateListAnimator="@null"
+            android:text="입양 교육자료"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:textSize="17sp" />
+
+
+        <android.widget.Button
+            android:id="@+id/menu_btn2"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/dog"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="20dp"
+            android:gravity="fill"
+            android:stateListAnimator="@null"
+            android:text="입양 안내 / 입양 비용"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:textSize="17sp" />
+
+        <android.widget.Button
+            android:id="@+id/menu_btn3"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/cart"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="20dp"
+            android:gravity="fill"
+            android:stateListAnimator="@null"
+            android:text="반려동물 샵"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:textSize="17sp" />
+
+        <android.widget.Button
+            android:id="@+id/menu_btn4"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/question"
+            android:drawableEnd="@drawable/arrow_right"
+            android:drawablePadding="20dp"
+            android:gravity="fill"
+            android:stateListAnimator="@null"
+            android:text="자주 묻는 질문"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            tools:textSize="17sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

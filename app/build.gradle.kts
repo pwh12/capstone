@@ -82,4 +82,7 @@ dependencies {
 
     implementation("androidx.fragment:fragment-ktx:1.3.6")
 
+    // Youtube Player
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
 }

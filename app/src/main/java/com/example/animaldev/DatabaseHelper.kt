@@ -8,8 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_NAME = "liked_animals.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 3
 
+        const val TABLE_NAME_DETAIL_VISITED = "detail_visited"
         private const val TABLE_NAME = "likes"
         private const val KEY_ID = "id"
         private const val KEY_IS_LIKED = "isLiked"
@@ -18,10 +19,14 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_LIKES_TABLE = ("CREATE TABLE $TABLE_NAME($KEY_ID TEXT PRIMARY KEY, $KEY_IS_LIKED INTEGER)")
         db?.execSQL(CREATE_LIKES_TABLE)
+
+        val CREATE_DETAIL_VISITED_TABLE = ("CREATE TABLE $TABLE_NAME_DETAIL_VISITED($KEY_ID TEXT PRIMARY KEY)")
+        db?.execSQL(CREATE_DETAIL_VISITED_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_DETAIL_VISITED")
         onCreate(db)
     }
 
@@ -33,6 +38,16 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         values.put(KEY_IS_LIKED, if (isLiked) 1 else 0)
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_REPLACE)
+        db.close()
+    }
+
+    // 상세정보를 조회한 데이터를 테이블에 저장
+    fun addDetailVisited(animalId: String) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(KEY_ID, animalId)
+
+        db.insertWithOnConflict(TABLE_NAME_DETAIL_VISITED, null, values, SQLiteDatabase.CONFLICT_REPLACE)
         db.close()
     }
 
@@ -66,4 +81,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         db.delete(TABLE_NAME, "$KEY_ID = ?", arrayOf(animalId))
         db.close()
     }
+
 }
+
+
