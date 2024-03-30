@@ -7,15 +7,29 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/recent_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="최근 본 동물"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <android.widget.Button
+            android:id="@+id/edu_back"
+            android:layout_width="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/arrow_left" />
+
+        <TextView
+            android:id="@+id/edu_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="최근 본 동물"
+            android:paddingLeft="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"

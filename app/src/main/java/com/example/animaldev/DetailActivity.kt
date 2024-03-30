@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.animalDev.R
 import com.example.animalDev.databinding.ActivityDetailBinding
 import com.example.animalDev.databinding.DialogCustomBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -120,8 +119,6 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         // DatabaseHelper 인스턴스 초기화
         databaseHelper = DatabaseHelper(this)
         val animalId = intent.getStringExtra("noticeNo") ?: return
-
-        databaseHelper.addDetailVisited(animalId)
 
         // 현재 동물의 좋아요 상태를 조회하여 UI 업데이트
         val isLiked = databaseHelper.isLiked(animalId)

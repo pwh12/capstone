@@ -47,7 +47,6 @@ class HomeFragment : Fragment() {
     private var kindCd : String? = null    // 품종코드
     private var upkindNm : String? = null  // 축종이름
     private var kindNm : String? = null    // 품종이름
-
     private var isLiked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -260,6 +259,7 @@ class HomeFragment : Fragment() {
 
             // 카드뷰 클릭 리스너
             newCardViewBinding.root.setOnClickListener { // 상세 정보 액티비티로 이동하는 인텐트 생성
+                databaseHelper.addRecentVisited(animal) // 상세 정보를 본 데이터를 데이터베이스에 저장
                 val intent = Intent(activity, DetailActivity::class.java).apply {
                     // 인텐트에 동물의 상세 정보를 넣습니다.
                     putExtra("noticeNo", animal.noticeNo)
